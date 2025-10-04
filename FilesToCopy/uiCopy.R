@@ -2,7 +2,6 @@ library(DT)
 library(plotly)
 library(tidyverse)
 library(shiny)
-library(shinythemes)
 
 rd_text <- "A higher tech level is necessary to prevail against the crises, but spending too much on R&D reduces your ability to spend on force structure"
 readiness_funding_text <- "You can save money by reducing readiness funding, but too much cutting reduces the effectiveness of your force"
@@ -25,14 +24,14 @@ shinyUI(
     
     title="Build the Force", 
     #shinythemes::themeSelector(),
-    theme = shinythemes::shinytheme("cyborg"),
+    theme = shinythemes::shinytheme("sandstone"),
     includeCSS("www/custom.css"),
   
   # title bar
   
   titlePanel( 
     div(
-      style="text-align:center;  color: green;", tags$small("(U) Unclassified"), 
+      style="text-align:center; font-family: Impact; color: green;", tags$small("(U) Unclassified"), 
       br(), 
       img(src="awc.png", height="125", width="125"), 
       "Build the Force",
@@ -50,6 +49,7 @@ shinyUI(
         column(10, 
           br(),
           column(3,
+            style="border-style: solid; border-color: black; border-radius: 8px; background-color: #e9fce9;",
             br(),
             selectInput("class", "Select class", c("Choose One" = "", "BSAP", "Wargame Designer Course", "ORSA Q Course", "Other")),
             textInput("name", "Player call sign", placeholder = "Enter call sign here"),

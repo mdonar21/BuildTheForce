@@ -1,0 +1,60 @@
+body{
+  color:white;
+}
+
+fluidpage{
+  color:white;
+}
+
+.banner {
+  font-weight: bold;
+  font-size: 130%;
+  text-align: center;
+  background-color:#90EE90;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.tabbable > .nav > li > a {
+  color: white;
+  border-style: solid;
+  border-color: black;
+  font-size: 130%;
+}
+
+.tabbable > .nav > li[class=active] > a {
+  border-color: black;
+  border-style: solid;
+}
+
+.unclass_bottom {
+  font-size: 200%; 
+  font-family: Impact; 
+  color: green; 
+  text-align:center;
+}
+
+.inputs {
+  font-size: 120%;
+}
+
+.dice {
+  padding: 10px;
+  background-color: lightgray;
+  border-style: solid;
+  border-color: black;
+  border-radius: 8px;
+}
+
+.notice {
+  background-color: yellow; 
+  color:black; 
+  border-color: black; 
+  border-style: dashed; 
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#tabs{
+  color:white;
+}

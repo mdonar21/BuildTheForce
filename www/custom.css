@@ -1,76 +1,198 @@
-body{
-  color:black;
-}
-shinyui{
-  color:black;
-}
-fluidpage{
-  color:white;
+/*Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Fonts classes*/ 
+.roboto-main {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
+.open-sans-secondary {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+.mohave-fallback {
+  font-family: "Mohave", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+/* --- Base Text Colors --- */
+body, .shinyui, .fluidpage {
+  color: black;
+  font-family: Roboto;
+}
+
+/* --- Banner Tabs --- */
 .banner-tab {
   font-weight: bold;
-  font-size: 130%;
+  font-size: 1.3rem;
   text-align: center;
-  /*background-color:#90EE90;*/
   border-style: solid;
   border-radius: 8px;
-  color:#f0fcfc;
+  color: #f0fcfc;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  word-wrap: break-word;
 }
 
-.banner-h2{
-  color:#080808;
+/* --- Banner Headings --- */
+.banner-h3 {
+  color: #080808;
   text-align: center;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.class-dropbox{
- font-size:1em;
+.classdropbox{
+  color: #080808;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-/*
-.tabbable > .nav > li > a {
-  color: white;
-  border-style: solid;
-  border-color: black;
-  font-size: 130%;
+/* --- Player Info Main Style --- */
+
+.player-info-con{
+  padding-top:4em;
 }
 
-.tabbable > .nav > li[class=active] > a {
-  background-color: blue;
-  border-color: black;
-  border-style: solid;
+/* --- Dropdowns --- */
+.class-dropbox {
+  font-size: 1.2em;
+  align-content: middle;
 }
-*/
+
+/* --- Bottom Unclassified Text --- */
 .unclass_bottom {
-  font-size: 200%; 
-  font-family: Impact; 
-  color: green; 
-  text-align:center;
+  font-size: 2rem;
+  font-family: Impact, sans-serif;
+  color: green;
+  text-align: center;
+  margin-top: 1em;
 }
 
+/* --- Input Styling --- */
 .inputs {
-  font-size: 120%;
+  font-size: 1.2rem;
 }
 
-.tabs-nav{
-  background-color:white;
-}
-
+/* --- Dice Box --- */
 .dice {
   padding: 10px;
   background-color: lightgray;
-  border-style: solid;
-  border-color: black;
+  border: solid 1px black;
   border-radius: 8px;
+  margin-bottom: 1em;
 }
 
+/* --- Notice Boxes --- */
 .notice {
-  background-color: yellow; 
-  color:black; 
-  border-color: black; 
-  border-style: dashed; 
+  background-color: yellow;
+  color: black;
+  border: dashed 2px black;
   padding: 10px;
   border-radius: 8px;
+  margin-bottom: 1em;
 }
+
+/*table style*/
+.banner-h4{
+  text-align: center;
+}
+.class-dropbox{}
+/* --- Navbar Title + Logos --- */
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 40px; 
+}
+
+
+.navbar-header img {
+    vertical-align: middle;
+}
+
+#tab a{
+  background-color: lightgray;!important
+}
+
+.nav-logo{
+  align-content: center;
+  padding-bottom: 100px;
+}
+
+.navtext{
+  font-size: 20px; 
+  font-weight: bold; 
+  color: white; 
+  white-space: nowrap; 
+  margin-right: 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .banner-tab {
+    font-size: 1.1rem;
+  }
+
+  .banner-h2 {
+    font-size: 1.2rem;
+  }
+
+  .inputs {
+    font-size: 1rem;
+  }
+
+  .unclass_bottom {
+    font-size: 1.5rem;
+  }
+
+  .nav-logo {
+    height: 25px;
+  }
+
+  .nav-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-tab,
+  .banner-h2,
+  .unclass_bottom,
+  .notice,
+  .dice {
+    text-align: center;
+  }
+
+  .nav-logo {
+    height: 22px;
+  }
+
+  .nav-title {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .navbar-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 

@@ -25,14 +25,14 @@ shinyUI(
     
     title="Build the Force", 
     #shinythemes::themeSelector(),
-    theme = shinythemes::shinytheme("cyborg"),
+    theme = shinythemes::shinytheme("flatly"),
     includeCSS("www/custom.css"),
   
   # title bar
   
   titlePanel( 
     div(
-      style="text-align:center;  color: green;", tags$small("(U) Unclassified"), 
+      style="text-align:center; font-family: Impact; color: green;", tags$small("(U) Unclassified"), 
       br(), 
       img(src="awc.png", height="125", width="125"), 
       "Build the Force",
@@ -46,7 +46,7 @@ shinyUI(
     
     tabPanel("Player Information",
       br(),
-      fluidRow(
+      fluidRow(class="class-dropbox",
         column(10, 
           br(),
           column(3,
@@ -56,12 +56,14 @@ shinyUI(
           ),
           column(8, offset = 1,
             div(class = "banner",
-              "Build the Force Hall of Fame",
+              h3(class="banner-h4",
+                "Build the Force Hall of Fame",
+              ),
             ),
             br(),
             fluidRow(
-              style="border-style: solid; border-color: black; border-radius: 8px; background-color: #e9fce9;",
-              column(4, offset = 1, align = "center",
+              style="border-style: solid; border-color: black; border-radius: 8px; text-align:center",
+              column(2,align = "center",
                 br(),
                 uiOutput("hof_image")
               ),

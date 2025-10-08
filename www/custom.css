@@ -30,11 +30,16 @@
 
 
 /* --- Base Text Colors --- */
-body, .shinyui, .fluidpage {
+body, shinyui, fluidpage {
   color: black;
   font-family: Roboto;
+  width: 100em;
+  height:100em;
 }
 
+navbar{
+  background-color: #094684;
+}
 /* --- Banner Tabs --- */
 .banner-tab {
   font-weight: bold;
@@ -48,34 +53,39 @@ body, .shinyui, .fluidpage {
   word-wrap: break-word;
 }
 
-/* --- Banner Headings --- */
+/* ### Banner Headings ### */
 .banner-h3 {
   color: #080808;
   text-align: center;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2em;
 }
 
 .classdropbox{
   color: #080808;
   text-align: center;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1em;
+  padding-top: 20px;
 }
 
-/* --- Player Info Main Style --- */
+.main-page-div{
+  padding-top:40px;
+  vertical-align: middle;
+}
+/* -### Player Info Main Style ### */
 
 .player-info-con{
   padding-top:4em;
 }
 
-/* --- Dropdowns --- */
+/* ### Dropdowns ### */
 .class-dropbox {
   font-size: 1.2em;
   align-content: middle;
 }
 
-/* --- Bottom Unclassified Text --- */
+/* ### Bottom Unclassified Text ### */
 .unclass_bottom {
   font-size: 2rem;
   font-family: Impact, sans-serif;
@@ -84,41 +94,26 @@ body, .shinyui, .fluidpage {
   margin-top: 1em;
 }
 
-/* --- Input Styling --- */
+/* ### Input Styling ### */
 .inputs {
   font-size: 1.2rem;
 }
 
-/* --- Dice Box --- */
-.dice {
-  padding: 10px;
-  background-color: lightgray;
-  border: solid 1px black;
-  border-radius: 8px;
-  margin-bottom: 1em;
-}
 
-/* --- Notice Boxes --- */
-.notice {
-  background-color: yellow;
-  color: black;
-  border: dashed 2px black;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 1em;
-}
-
-/*table style*/
+/* ### table style ### */
 .banner-h4{
   text-align: center;
+  background-color: ;
 }
-.class-dropbox{}
-/* --- Navbar Title + Logos --- */
+
+/* ### Navbar Title + Logos ### */
 
 .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
     line-height: 40px; 
+    width: 100%;
+    
 }
 
 
@@ -143,7 +138,12 @@ body, .shinyui, .fluidpage {
   margin-right: 10px;
 }
 
-/* --- Responsive Design --- */
+.sidebar{
+  background-color: white;
+  height: 100%; 
+}
+
+/* ### Responsive Design ### */
 @media (max-width: 992px) {
   .banner-tab {
     font-size: 1.1rem;
@@ -170,6 +170,46 @@ body, .shinyui, .fluidpage {
   }
 }
 
+/* ### Round 1 styling #### */
+/*Section Header*/
+h4{
+ background: linear-gradient(90deg, #007AFF 0%, #0095FF 100%);
+  padding: 10px;
+  color:white;
+  border-radius:8px;
+  font-size: 1.6em;
+  /*
+  text-decoration-line: underline;
+  text-decoration-thickness: 8px;
+  text-decoration-thickness: 100%;
+  text-decoration-thickness: 2rem;
+  text-decoration-thickness: auto;
+  text-decoration-thickness: from-font;
+  */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* ### Dice Box ### */
+.dice {
+  padding: 10px;
+  background-color: lightgray;
+  border: solid 1px black;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+/* ### Notice Boxes ### */
+.notice {
+  background-color: yellow;
+  color: black;
+  border: dashed 2px black;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+
+/* ### Mobile desgin ### */
 @media (max-width: 576px) {
   .banner-tab,
   .banner-h2,

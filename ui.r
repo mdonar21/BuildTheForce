@@ -45,7 +45,10 @@ shinyUI(
     tabPanel(
       "Player Information",
       fluidRow(
-        class = "class-dropbox v-center-row",
+        div(
+        class = "class-dropbox v-center-row main-page-div",
+          
+        
         column(
           4,
           # Removed 'br()' here
@@ -65,7 +68,7 @@ shinyUI(
         
         column(8, tags$div(
           class = "hof-modern-box",
-          div(class = "banner", h3(class = "banner-h4", "Build the Force Hall of Fame")),
+          div(class = "banner", h3(class = "banner-h3", "Build the Force Hall of Fame")),
           fluidRow(
             column(
               2,
@@ -82,6 +85,7 @@ shinyUI(
               tableOutput("hof")
             )
           )
+        )
         ))
       ),
       br(),
@@ -99,8 +103,7 @@ shinyUI(
       sidebarLayout(
         sidebarPanel(
           width = 3,
-          style = "background-color: white; height: 70vh; overflow-y: auto;",
-          
+          class="sidebar",
           # error alerts box
           
           fluidRow(
@@ -133,7 +136,7 @@ shinyUI(
           ),
           br(),
           
-          #  game dashhboard box
+          #  game dashboard box
           
           fluidRow(
             column(
@@ -165,25 +168,21 @@ shinyUI(
           
           fluidRow(
             column(12, style = "background-color:#ff8080; border-style: solid; border-radius: 8px;", div(style =
-                                                                                                           "text-align:center;", fluidRow(
-                                                                                                             column(
-                                                                                                               6,
-                                                                                                               tags$strong("Readiness Failure Points"),
-                                                                                                               textOutput("read_failure")
-                                                                                                             ),
-                                                                                                             column(
-                                                                                                               6,
-                                                                                                               tags$strong("Crisis Failure Points"),
-                                                                                                               textOutput("crisis_failure")
-                                                                                                             )
-                                                                                                           ))),
-          )
+             "text-align:center;", fluidRow(
+               column(
+                 6,
+                 
+                 tags$strong("Readiness Failure Points"), textOutput("read_failure")
+               ), column(6,
+                         tags$strong("Crisis Failure Points"),
+                         textOutput("crisis_failure"))
+             ))), )
         ),
         # ends sidebar panel
         
         mainPanel(
           width = 9,
-          style = "height: 70vh; overflow-y: auto;",
+          style = "height: 100%; overflow-y: auto;",
           br(),
           
           # randomness determination
@@ -214,8 +213,14 @@ shinyUI(
           
           # political event
           
+          #"(1) 
           br(),
-          banner_function("(1) Select the political event"),
+          banner_function(
+            h4(
+              "Select the political event" 
+            ),
+          ),
+          class="section-banner",
           br(),
           
           fluidRow(
@@ -376,13 +381,15 @@ shinyUI(
           # research and development
           
           br(),
-          banner_function(
-            "(2) Make your research and development choices",
-            "circle-info",
-            rd_text
+          shiny::tagList(
+            shiny::h4("(2) Make your research and development choices"),
+            banner_function(
+              NULL, # The title is now in the h3, so you might pass NULL or "" here
+              "circle-info",
+              rd_text
+            )
           ),
           br(),
-          
           fluidRow(
             column(
               6,
@@ -1647,7 +1654,7 @@ shinyUI(
       sidebarLayout(
         sidebarPanel(
           width = 3,
-          style = "background-color: white; height: 70vh; overflow-y: auto;",
+          style = "background-color: white; height: 100%; overflow-y: auto;",
           
           # rd2: error alerts box
           
@@ -1741,7 +1748,7 @@ shinyUI(
         
         mainPanel(
           width = 9,
-          style = "height:70vh; overflow-y: auto;",
+          style = "height:100%; overflow-y: auto;",
           
           fluidRow(column(12, strong(
             htmlOutput("pre_rd2_reminder")
@@ -3419,7 +3426,7 @@ shinyUI(
     tabPanel("Round 3", value = "round3", sidebarLayout(
       sidebarPanel(
         width = 3,
-        style = "background-color: white; height: 70vh; over-flow-y: auto;",
+        style = "background-color: white; height: 100%; over-flow-y: auto;",
         
         # rd3: error checks
         
@@ -3510,7 +3517,7 @@ shinyUI(
       
       mainPanel(
         width = 9,
-        style = "height:70vh; overflow-y: auto;",
+        style = "height:100%; overflow-y: auto;",
         
         fluidRow(column(12, strong(
           htmlOutput("pre_rd3_reminder")

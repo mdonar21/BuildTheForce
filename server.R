@@ -2231,6 +2231,31 @@ shinyServer(function(input, output, session) {
   })
   
   
+  #Trying to make the error box change colors for better UI 
+  output$errorBox <- renderUI({
+    # Determine if any errors exist
+    has_error <- (
+      (error1() + error2() + error3() + error4() + error5()) > 0 ||
+        any(is.na(NA_rd1())) ||
+        any(is.na(NA_rd2())) ||
+        any(is.na(NA_rd3()))
+    )
+    
+    div(
+      class = paste("error-box", if (has_error) "red" else "green"),
+      tags$strong("Error Alerts"),
+      
+      # Optional: show your existing outputs if you still use them
+      textOutput("error1"),
+      textOutput("error2"),
+      textOutput("error3"),
+      textOutput("error4"),
+      textOutput("no_error"),
+      textOutput("tw_no_error"),
+      textOutput("th_no_error")
+    )
+  })
+  
   # error1: remaining funding must be non-negative
   
   output$error1 <- renderText({error1_check(remaining())})

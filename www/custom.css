@@ -28,6 +28,11 @@
   font-style: normal;
 }
 
+/*Vars for colors */
+:root{
+   --header-color: rgb(51,34,136) /* Blue Header Color*/
+}
+
 
 /* --- Base Text Colors --- */
 body, shinyui, fluidpage {
@@ -40,6 +45,28 @@ body, shinyui, fluidpage {
 navbar{
   background-color: #094684;
 }
+
+/* ### Styles the scrollbar in the error box
+this is just for nicer overall looks * ###*/
+
+.error-box.red::-webkit-scrollbar {
+    width: 12px;
+    scrollbar-color: red orange;
+  scrollbar-width: thin;
+}
+
+/*
+.error-box.red::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.error-box.red::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+*/
 /* --- Banner Tabs --- */
 .banner-tab {
   font-weight: bold;
@@ -67,6 +94,10 @@ navbar{
   font-weight: bold;
   font-size: 1em;
   padding-top: 20px;
+}
+
+.section-banner{
+ padding-left: 4em; 
 }
 
 .main-page-div{
@@ -139,8 +170,147 @@ navbar{
 }
 
 .sidebar{
-  background-color: white;
+  /*background-color: white;*/
   height: 100%; 
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x:auto ;
+  padding-right: 10px;
+}
+
+/* ### Round 1 styling #### */
+/*Section Header*/
+h4{
+  width: 40em;
+  background-color: rgb(51,34,136);
+  padding: 10px;
+  color:white;
+  border-radius:8px;
+  font-size: 1.6em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.h4-readiness{
+  background-color: red;
+  width: 10em;
+}
+
+/* ### Dice Box ### */
+.diceBox {
+  padding: 10px;
+  /*
+  background-color: #BBBBBB;
+  border: solid 1px black;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  */
+}
+
+/* ### Pol Event Style * ###*/
+
+
+/* ### Notice Boxes ### */
+.notice {
+  background-color: #FFE14D;
+  color: black;
+  border: solid 2px black;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+/* ### Error Box * ###*/
+
+.error-box {
+  border: 2px solid rgba(10, 10, 10, 0.2); /* A 50% opaque red border */
+  color: black;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  overflow-y:auto;
+
+}
+
+/*Overflow should help with the longer errors that will 
+cause the box to cover the screen 
+This now allows users to scroll in the error message
+*/
+
+.error-box.red {
+  background-color: #ff4d4d;/* red = errors present */
+  color:black;
+  width: 20em;
+  overflow-y: scroll;
+  align-content: center;
+}
+
+.error-box.green {
+  background-color:#80AC5F; /* green = no errors */
+  color: black;
+}
+
+
+/* ### Funding Box  ### */
+.fundingBox{
+ border: 2px solid rgba(230, 230, 230, 0.8); 
+ border-radius: 8px;
+}
+
+/* ### Fail Points ###*/
+.failBox{
+  padding-bottom: 2.5em;
+} 
+
+.well{
+  margin-top: 4em;
+  margin-right:1em;
+  background: #ffffff;
+  position: fixed;
+  padding-right: 1em;
+  width: 22em;
+  overflow-x:hidden;
+}
+
+
+/* ### Sidebar Table Style ### */
+.sideBarTable{
+  height: 40vh; 
+  /*background-color:#FDF0EE;*/
+  border-style: solid 1px black; 
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* ### Mobile desgin ### */
+@media (max-width: 576px) {
+  .banner-tab,
+  .banner-h2,
+  .unclass_bottom,
+  .notice,
+  .dice {
+    text-align: center;
+  }
+
+  .nav-logo {
+    height: 22px;
+  }
+
+  .nav-title {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .navbar-header {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ### Responsive Design ### */
@@ -167,71 +337,6 @@ navbar{
 
   .nav-title {
     font-size: 1rem;
-  }
-}
-
-/* ### Round 1 styling #### */
-/*Section Header*/
-h4{
- background: linear-gradient(90deg, #007AFF 0%, #0095FF 100%);
-  padding: 10px;
-  color:white;
-  border-radius:8px;
-  font-size: 1.6em;
-  /*
-  text-decoration-line: underline;
-  text-decoration-thickness: 8px;
-  text-decoration-thickness: 100%;
-  text-decoration-thickness: 2rem;
-  text-decoration-thickness: auto;
-  text-decoration-thickness: from-font;
-  */
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-
-/* ### Dice Box ### */
-.dice {
-  padding: 10px;
-  background-color: lightgray;
-  border: solid 1px black;
-  border-radius: 8px;
-  margin-bottom: 1em;
-}
-
-/* ### Notice Boxes ### */
-.notice {
-  background-color: yellow;
-  color: black;
-  border: dashed 2px black;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 1em;
-}
-
-
-/* ### Mobile desgin ### */
-@media (max-width: 576px) {
-  .banner-tab,
-  .banner-h2,
-  .unclass_bottom,
-  .notice,
-  .dice {
-    text-align: center;
-  }
-
-  .nav-logo {
-    height: 22px;
-  }
-
-  .nav-title {
-    display: block;
-    text-align: center;
-    margin-top: 4px;
-  }
-
-  .navbar-header {
-    flex-direction: column;
-    align-items: center;
   }
 }
 

@@ -3,6 +3,7 @@ library(plotly)
 library(tidyverse)
 library(shiny)
 library(shinythemes)
+library(colorBlindness)
 
 rd_text <- "A higher tech level is necessary to prevail against the crises, but spending too much on R&D reduces your ability to spend on force structure"
 readiness_funding_text <- "You can save money by reducing readiness funding, but too much cutting reduces the effectiveness of your force"
@@ -107,17 +108,7 @@ shinyUI(
           # error alerts box
           
           fluidRow(
-            column(
-              12,
-              style = "background-color:yellow; color:black; border-style: solid; border-color: black; border-radius: 8px",
-              tags$strong("Error Alerts"),
-              textOutput("error1"),
-              textOutput("error2"),
-              textOutput("error3"),
-              textOutput("error4"),
-              textOutput("NA_error"),
-              textOutput("no_error")
-            )
+            uiOutput("errorBox")
           ),
           br(),
           
@@ -126,7 +117,7 @@ shinyUI(
           fluidRow(
             column(
               12,
-              style = "background-color:#FDF0EE; border-style: solid; border-radius: 8px;",
+              class="fundingBox",
               fluidRow(
                 style = "text-align: center;",
                 column(6, tags$strong("Funding Allocated"), textOutput("allocated"), ),
@@ -141,7 +132,7 @@ shinyUI(
           fluidRow(
             column(
               12,
-              style = "height: 40vh; overflow-y: auto; background-color:#FDF0EE; border-style: solid; border-radius: 8px;",
+              class="sidebarTable",
               br(),
               textOutput("rd_costs"),
               textOutput("rd_costs2"),
@@ -167,7 +158,7 @@ shinyUI(
           # failure points box
           
           fluidRow(
-            column(12, style = "background-color:#ff8080; border-style: solid; border-radius: 8px;", div(style =
+            column(12, class="failBox", div(style =
              "text-align:center;", fluidRow(
                column(
                  6,
@@ -190,7 +181,7 @@ shinyUI(
           fluidRow(
             column(
               4,
-              style = "background-color:#F8F8FF; border-style: dashed; border-radius: 8px;",
+              class="diceBox",
               br(),
               radioButtons(
                 inputId = "dice",
@@ -436,7 +427,9 @@ shinyUI(
           # readiness
           
           br(),
-          banner_function("(3a) Select the readiness events"),
+          h4(
+            "(3a) Select the readiness events"
+          ),
           br(),
           
           # readiness1
@@ -621,7 +614,12 @@ shinyUI(
             12,
             selectInput(
               "readiness_event2",
-              "Select the second readiness event",
+              banner_function(
+                h4(
+                  "Select the second readniess event" 
+                ),
+              ),
+              br(),
               choices = c(
                 "None",
                 "Public Opinion" = "read1",
@@ -914,10 +912,13 @@ shinyUI(
           # forces information table: costs and capabilities
           
           br(),
+          #Left Off Here !!!!!!
           banner_function(
+            h4(
             "(4a) Info: Force Capabilities Table",
             "circle-info",
             "Table will update to include any selected upgrades"
+            ),
           ),
           br(),
           

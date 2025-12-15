@@ -1,0 +1,343 @@
+/*Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Fonts classes*/ 
+.roboto-main {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.open-sans-secondary {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+.mohave-fallback {
+  font-family: "Mohave", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/*Vars for colors */
+:root{
+   --header-color: rgb(51,34,136) /* Blue Header Color*/
+}
+
+
+/* --- Base Text Colors --- */
+body, shinyui, fluidpage {
+  color: black;
+  font-family: Roboto;
+  width: 100em;
+  height:100em;
+}
+
+navbar{
+  background-color: #094684;
+}
+
+/* ### Styles the scrollbar in the error box
+this is just for nicer overall looks * ###*/
+
+.error-box.red::-webkit-scrollbar {
+    width: 12px;
+    scrollbar-color: red orange;
+  scrollbar-width: thin;
+}
+
+/*
+.error-box.red::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.error-box.red::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+*/
+/* --- Banner Tabs --- */
+.banner-tab {
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
+  border-style: solid;
+  border-radius: 8px;
+  color: #f0fcfc;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  word-wrap: break-word;
+}
+
+/* ### Banner Headings ### */
+.banner-h3 {
+  color: #080808;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.classdropbox{
+  color: #080808;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 20px;
+}
+
+.section-banner{
+ padding-left: 4em; 
+}
+
+.main-page-div{
+  padding-top:40px;
+  vertical-align: middle;
+}
+/* -### Player Info Main Style ### */
+
+.player-info-con{
+  padding-top:4em;
+}
+
+/* ### Dropdowns ### */
+.class-dropbox {
+  font-size: 1.2em;
+  align-content: middle;
+}
+
+/* ### Bottom Unclassified Text ### */
+.unclass_bottom {
+  font-size: 2rem;
+  font-family: Impact, sans-serif;
+  color: green;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* ### Input Styling ### */
+.inputs {
+  font-size: 1.2rem;
+}
+
+
+/* ### table style ### */
+.banner-h4{
+  text-align: center;
+  background-color: ;
+}
+
+/* ### Navbar Title + Logos ### */
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 40px; 
+    width: 100%;
+    
+}
+
+
+.navbar-header img {
+    vertical-align: middle;
+}
+
+#tab a{
+  background-color: lightgray;!important
+}
+
+.nav-logo{
+  align-content: center;
+  padding-bottom: 100px;
+}
+
+.navtext{
+  font-size: 20px; 
+  font-weight: bold; 
+  color: white; 
+  white-space: nowrap; 
+  margin-right: 10px;
+}
+
+.sidebar{
+  /*background-color: white;*/
+  height: 100%; 
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x:auto ;
+  padding-right: 10px;
+}
+
+/* ### Round 1 styling #### */
+/*Section Header*/
+h4{
+  width: 40em;
+  background-color: rgb(51,34,136);
+  padding: 10px;
+  color:white;
+  border-radius:8px;
+  font-size: 1.6em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.h4-readiness{
+  background-color: red;
+  width: 10em;
+}
+
+/* ### Dice Box ### */
+.diceBox {
+  padding: 10px;
+  /*
+  background-color: #BBBBBB;
+  border: solid 1px black;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  */
+}
+
+/* ### Pol Event Style * ###*/
+
+
+/* ### Notice Boxes ### */
+.notice {
+  background-color: #FFE14D;
+  color: black;
+  border: solid 2px black;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+/* ### Error Box * ###*/
+
+.error-box {
+  border: 2px solid rgba(10, 10, 10, 0.2); /* A 50% opaque red border */
+  color: black;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  overflow-y:auto;
+
+}
+
+/*Overflow should help with the longer errors that will 
+cause the box to cover the screen 
+This now allows users to scroll in the error message
+*/
+
+.error-box.red {
+  background-color: #ff4d4d;/* red = errors present */
+  color:black;
+  width: 20em;
+  overflow-y: scroll;
+  align-content: center;
+}
+
+.error-box.green {
+  background-color:#80AC5F; /* green = no errors */
+  color: black;
+}
+
+
+/* ### Funding Box  ### */
+.fundingBox{
+ border: 2px solid rgba(230, 230, 230, 0.8); 
+ border-radius: 8px;
+}
+
+/* ### Fail Points ###*/
+.failBox{
+  padding-bottom: 2.5em;
+} 
+
+.well{
+  margin-top: 4em;
+  margin-right:1em;
+  background: #ffffff;
+  position: fixed;
+  padding-right: 1em;
+  width: 22em;
+  overflow-x:hidden;
+}
+
+
+/* ### Sidebar Table Style ### */
+.sideBarTable{
+  height: 40vh; 
+  /*background-color:#FDF0EE;*/
+  border-style: solid 1px black; 
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* ### Mobile desgin ### */
+@media (max-width: 576px) {
+  .banner-tab,
+  .banner-h2,
+  .unclass_bottom,
+  .notice,
+  .dice {
+    text-align: center;
+  }
+
+  .nav-logo {
+    height: 22px;
+  }
+
+  .nav-title {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .navbar-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ### Responsive Design ### */
+@media (max-width: 992px) {
+  .banner-tab {
+    font-size: 1.1rem;
+  }
+
+  .banner-h2 {
+    font-size: 1.2rem;
+  }
+
+  .inputs {
+    font-size: 1rem;
+  }
+
+  .unclass_bottom {
+    font-size: 1.5rem;
+  }
+
+  .nav-logo {
+    height: 25px;
+  }
+
+  .nav-title {
+    font-size: 1rem;
+  }
+}
+
+
